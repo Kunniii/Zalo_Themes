@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Youtube Border",
+  "name": "Chủ đề Zalo",
   "version": "1.0.0",
-  "description": "Add rounded corners border to your Youtube video",
+  "description": "Tùy chỉnh màu sắc giao diện Zalo.",
   "icons": {
     "128": "icon.png"
   },
@@ -15,12 +15,21 @@
   "background": {
     "service_worker": "background.js"
   },
-  "host_permissions": ["https://www.youtube.com/watch*"],
+  "host_permissions": [
+    "https://chat.zalo.me/*"
+  ],
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/watch*"],
-      "js": ["content.js"]
+      "matches": [
+        "https://chat.zalo.me/*"
+      ],
+      "js": [
+        "content.js"
+      ]
     }
   ],
-  "permissions": ["storage"]
+  "permissions": [
+    "storage",
+    "scripting"
+  ]
 }
